@@ -1,0 +1,292 @@
+* {margin:0; padding:0;}
+ul,ol,li {list-style:none;}
+a {text-decoration:none;}
+img {vertical-align:middle;}
+body {line-height:1; font-family: 'Roboto', sans-serif;}
+textarea {resize:none;}
+
+h3 {font-family: 'Roboto', sans-serif; font-weight:400; font-size:20px; color:#dc3545; margin-bottom:40px;}
+h2 {font-family: 'Dosis', sans-serif; font-weight:300; font-size:48px; margin-bottom:60px;}
+p {color:#535353; font-size:15px; line-height:25px; margin-bottom:70px;}
+
+#header {width:100%; position:absolute; bottom:-40px; display:flex; justify-content:center; z-index:99;}
+#header.fixed {position:fixed; top:0; bottom:unset;}
+#header.fixed .center {width:100%; border-radius:0;}
+
+#header .center {display:flex; justify-content:center; background-color:#fff; border-radius:30px;
+                 box-shadow:0px 2px 10px rgba(0,0,0,0.4); transition:all 0.5s;}
+#header .center .gnb {display:flex;}
+#header .center .gnb > li {margin:0 30px; line-height:80px;}
+#header .center .gnb > li > a {color:#000; padding:10px; box-sizing:border-box; transition:all 0.5;}
+#header .center .gnb > li.on > a {color:#fff; background-color:#dc3545; border-radius:50px;}
+
+#header .center .ham {display:flex; flex-direction:column; justify-content:center; margin:0 30px; cursor:pointer;}
+#header .center .ham:hover .short {width:30px;}
+#header .center .ham span {display:block; background-color:#000; margin:5px auto;}
+#header .center .ham .short {width:20px; height:1px; transition:all 0.2s;}
+#header .center .ham span:nth-child(2) {width:30px; height:1px;}
+
+#header .closeMenu {display:none; position:fixed; top:0; left:0; background-color:rgba(0,0,0,0.5); width:100vw; height:100vh;}
+
+/* 우측 햄버거메뉴 작업 시작 */
+#hamMenu {
+         position:fixed; background-color:#dc3545; top:0; right:-100%; width:560px; height:100%;
+         padding:50px 80px; display:flex; flex-direction:column; justify-content:space-between;
+         transition:all 0.5s;}
+
+         
+/* 스크립트에서 hamMenu에 hamShow 클래스 달아줘서 햄버거 메뉴 클릭시 오른쪽에서 날아도록 작업 */
+#hamMenu.hamShow {right:0%;}
+#hamMenu li {margin-bottom:35px; font-size:20px;}
+#hamMenu li a {transition:all 0.5s;}
+#hamMenu a, #hamMenu p {color:#fff;}
+#hamMenu p {font-size:10px;}
+#hamMenu .bot .sns {display:flex;}
+#hamMenu .bot .sns li {margin-right:20px;}
+         
+/* 서브메뉴에 화살표 따라오는것 작업 */
+#hamMenu .subGnbPoint {position:relative; top:100px;}
+#hamMenu .subGnbPoint .subGnb {padding-left:30px;}
+#hamMenu .subGnbPoint .point {content:""; color:#fff; position:absolute; top:0; left:0;}
+
+#hamMenu .closeBtn {position:absolute; right:70px; cursor:pointer;}
+#hamMenu .closeBtn i {color:#fff; font-size:20px;}
+
+
+/* cont1 작업 시작 */
+.cont1 {width:100%; height:100vh;
+        background-image:url(img/banner.png); background-repeat:no-repeat;
+        background-size:cover; background-position:center;}
+.cont1 .bg {width:100%; height:100vh; background: rgb(255,208,0);
+            display:flex; justify-content:center; align-items:center;
+            background: linear-gradient(45deg, rgba(255,208,0,0.2) 0%, rgba(255,0,76,0.25) 100%);}
+.cont1 .textWrap {text-align:center;}
+.cont1 .textWrap img {width:200px; height:200px; padding-top:5px; border:5px solid #fff; border-radius:50%;}
+.cont1 .title {font-size:50px; color:#fff; margin:50px 0 25px;}
+.cont1 .typing {font-size:25px; color:#fff;}
+.cont1 .typing::after {content:""; display:inline-block; width:2px; height:27px; background-color:#fff; transform:translateY(2px);
+                       animation:blink 0.5s linear 0s infinite normal backwards; margin-left:2px;}
+@keyframes blink{
+        0% {opacity:0;}
+        100% {opacity:1;}
+}
+
+
+
+
+
+/* cont2 작업 시작 */
+.cont2 {padding:85px 0; overflow:hidden;}
+.cont2 > h2, .cont2 > h3, .cont2 > p {text-align:center;}
+.cont2 .bot {display:flex; justify-content:space-between;}
+
+.cont2 .bot.move .leftBox {left:0; opacity:1;}
+.cont2 .bot.move .rightBox {right:450px; opacity:1;}
+
+.cont2 .bot .leftBox {position:relative; left:-1000px; opacity:0; transition:all 1.5s;}
+.cont2 .bot .rightBox {position:relative; top:50px; right:-300px; opacity:0; transition:all 1.5s;}
+.cont2 .bot .rightBox .textBox {display:flex; margin-bottom:40px;}
+.cont2 .bot .rightBox .textBox h3 {font-size:25px; margin-bottom:15px; font-weight:500;}
+.cont2 .bot .rightBox .textBox p {font-size:15px; line-height:25px; color:#535353;}
+.cont2 .bot .rightBox i {font-size:40px; margin-right:17px; color:#dc3545; transition:all 1s;}
+.cont2 .bot .rightBox .textBox:hover i {transform:rotateY(360deg);}
+
+
+
+
+
+/* cont3 작업 시작 */
+.cont3 {background:#f6f6f6; display:flex; justify-content:center; align-items:center; width:100%; height:100vh}
+.cont3 .center {width:1440px; text-align:center; transform:translateY(-30px);}
+.cont3 .boxs {display:flex; justify-content:space-between;}
+.cont3 .box {width:220px; height:220px; border-radius:4px; background:#fff; box-shadow:0px 0px 10px rgba(0,0,0,0.2); cursor:pointer;}
+.cont3 i {font-size:40px; color:#dc3545; position:relative; top:50px; transition:all 0.5s;}
+.cont3 p {position:relative; top:100px; font-size:17px;}
+.cont3 .box > div {position:relative; top:80px; font-size:25px; color:#666;}
+.cont3 .box:hover {background-color:#dc3545; color:#fff;}
+.cont3 .box:hover i {top:35px; color:#fff;}
+.cont3 .box:hover p {color:#fff;}
+.cont3 .box:hover > div {color:#fff;}
+
+
+
+
+
+/* cont4 작업 시작 */
+.cont4 {display:flex; align-items:center; justify-content:center;}
+.cont4 .left_box {padding:0 90px;}
+
+
+
+
+
+/* cont5 작업 시작 */
+.cont5 {width:100%; display:flex; justify-content:center; padding:120px 0;}
+.cont5 .center {width:60%; align-items:center; display:flex;}
+.cont5 .center .left_box a {display:block; background-color:#dc3545;
+                            color:#fff; width:145px; height:45px;
+                            border-radius:50px; line-height:45px; text-align:center;}
+.cont5 .center .right_box img {width:530px;}
+
+
+
+
+
+/* cont6 작업 시작 */
+.cont6 {display:flex;}
+.cont6 .center {width:100%; display:flex; justify-content:center;}
+.cont6 .left_box {position:relative;}
+.cont6 a {display:block; position:absolute;
+          top:50%; right:-35px; transform:translateY(-50%);
+          width:70px; height:70px; background-color:#fff;
+          border-radius:50%; text-align:center; line-height:80px;}
+.cont6 a i {color:#dccf35; font-size:25px; position:relative;}
+
+.cont6 .right_box {background-color:#dc3545; padding:0 150px;
+                   display:flex; flex-direction:column; justify-content:center;}
+.cont6 .right_box h2, .cont6 .right_box p {color:#fff;}
+
+
+
+
+
+/* cont7 작업 시작 */
+.cont7 {display:flex; justify-content:center; padding:120px 0;}
+.cont7 .center {width:1110px;}
+.cont7 .top_text {text-align:center}
+.cont7 .top_text p {padding:0 250px;}
+
+.cont7 .btns {display:flex; justify-content:center;}
+.cont7 .btns li::after {content:""; display:inline-block; width:3px; height:18px; background-color:#ececec;
+                        transform:translateY(3px); margin:0 20px;}
+.cont7 .btns li:last-child::after{display:none;}
+.cont7 .btns li:last-child {transform:translateY(6px);}
+.cont7 .btns li a {color:#000;}
+
+.cont7 .btns li.turn a {color:#dc3545;}
+
+
+.cont7 .boxs {display:flex; flex-wrap:wrap; padding-top:55px;}
+.cont7 .boxs .all {width:360px; margin:5px; cursor:pointer;}
+.cont7 .boxs .all img { width:100%;}
+.cont7 .boxs .wide {width:730px;}
+
+.cont7 .boxs .hide_box {display:block; opacity:0; background-color:rgba(84, 84, 84, 0.6); position:absolute;
+                        top:50%; left:50%; transform:translate(-50%, -50%); color:#fff; text-align:center;
+                        transition:all 0.5s; width:180px;}
+.cont7 .boxs .small .hide_box {padding:22% 24%;}
+.cont7 .boxs .big .hide_box {padding:59% 24%;}
+.cont7 .boxs .wide .hide_box {padding:29% 37%;}
+
+.cont7 .boxs .hide_box span {display:inline-block; width:18px; height:2px; background-color:#fff;}
+.cont7 .boxs .hide_box span:first-child {transform:rotate(90deg) translateY(-11px);}
+.cont7 .boxs .hide_box span:nth-child(2) {transform:translateX(-11px);}
+.cont7 .boxs .hide_box h4 {margin-top:30px;}
+.cont7 .boxs .hide_box p {margin:10px 0 0 0; color:#fff;}
+
+.cont7 .boxs .all:hover .hide_box {opacity:1;}
+
+
+
+
+
+/* cont8 작업 시작 */
+.cont8 {background-image:url(img/parallax.jpg); background-repeat:no-repeat; background-size:cover; height:62%;
+        padding:120px 0;
+        display:flex; justify-content:center; align-items:center;}
+.cont8 .center {width:1200px;}
+
+.cont8 .center .top_text {text-align:center;}
+
+
+.cont8 .center .bot_context {display:flex; justify-content:center; align-items:center}
+
+.cont8 .center .bot_context .circle {display:flex; flex-wrap:wrap; width:250px;}
+.cont8 .center .bot_context .circle li {margin:10px; padding:5px; border:5px solid transparent; border-radius:50%; transition:all 0.5s;}
+.cont8 .center .bot_context .circle li:hover {border:5px solid orange;}
+.cont8 .center .bot_context .circle li.line {border:5px solid orange;}
+
+
+.cont8 .center .slider {width:570px; height:285px; background-color:#fff; overflow:hidden; margin:0 50px;
+                        border-radius:10px; box-shadow:0 0 30px rgba(0,0,0,0.2);}
+.cont8 .center .slider .view {width:800%; height:100%; display:flex; transition:all 0.5s; margin-left:0;}
+.cont8 .center .slider .view > div {width:12.5%; height:100%; padding:30px;}
+.cont8 .center .slider .view > div .review { line-height:2; color:#666; margin-bottom:15px;}
+.cont8 .center .slider .view > div > div {display:flex; align-items:center;}
+.cont8 .center .slider .view > div > div .name {margin-left:30px;}
+.cont8 .center .slider .view > div > div span {color:#666; font-size:14px; line-height:30px;}
+
+
+
+
+
+
+/* cont9 작업 시작 */
+.cont9 {display:flex; justify-content:center; background:#f6f6f6; padding:120px 0;}
+.cont9 .center {width:1110px;}
+.cont9 .top {text-align:center;}
+.cont9 .bot {display:flex;justify-content:space-between;}
+.cont9 .bot .box {width:540px; height:710px; background-color:#fff; box-shadow:0 0 20px rgba(0,0,0,0.5);}
+.cont9 .bot .box .img {overflow:hidden;}
+.cont9 .bot .box:hover img {transform:scale(1.2);}
+
+.cont9 .bot .box img {width:540px; transition:all 0.5s;}
+.cont9 .bot .box .text {padding:50px 30px;}
+.cont9 .bot .box .text h3 a {font-size:25px; color:#000;}
+.cont9 .bot .box .text > p {margin-bottom:40px;}
+.cont9 .bot .box .text .icon {display:flex; color:#a5a5a5;}
+.cont9 .bot .box .text .icon p {display:inline-block; font-size:12px; margin-bottom:30px;}
+.cont9 .bot .box .text .btn {display:block; background-color:#dc3545;
+                             color:#fff; width:145px; height:45px;
+                             border-radius:50px; line-height:45px; text-align:center;}
+.cont9 .bot .box:first-child .text .btn {color:#fff; background:#202020;}
+
+
+
+
+
+/* cont10 작업 시작 */
+.cont10 {display:flex; justify-content:center;}
+.cont10 li {line-height:275px; margin:0 30px;}
+.cont10 li a img {width:200px; height:160px;}
+
+
+
+
+
+/* cont11 작업 시작 */
+.cont11 {background-color:#f6f6f6; display:flex; justify-content:center; padding:120px 0;}
+.cont11 .center {width:51%;}
+.cont11 .center .top_text {text-align:center;}
+.cont11 .center .bot_form #assistance {display:flex; flex-wrap:wrap; justify-content:space-between;}
+.cont11 .center .bot_form input {width:445px; height:50px;
+                                 border-radius:5px; border:1px solid #dcdbdb;
+                                 padding-left:10px;}
+.cont11 .center #Name, .cont11 .center #contactNo {margin-right:30px;}
+.cont11 .center .bot_form textarea {border-radius:5px; border:1px solid #dcdbdb;
+                                    width:100%; height:150px; padding:15px 0 0 10px;}
+.cont11 .center .bot_form a {display:block; background-color:#dc3545;
+                             color:#fff; width:145px; height:45px;
+                             border-radius:50px; line-height:45px; text-align:center;
+                             margin:0 auto; margin-top:45px;}
+.cont11 .center .bot_form .box {display:flex; flex-direction:column; margin-bottom:40px;}
+.cont11 .center .bot_form .box span {display:inline-block; margin:5px 0; font-size:14px;}
+
+
+
+
+/* 풋터 작업 시작 */
+#footer {display:flex; justify-content:center; margin:70px 0; text-align:center;}
+#footer .center {width:20%;}
+#footer .center .sns {display:flex; justify-content:space-between; margin-bottom:15px;}
+#footer .center .sns li {background-color:#fff; width:40px; transform:scale(1.4);
+                         border-radius:50%; transition:all 0.5s;}
+#footer .center .sns li:hover a i {color:#fff;}
+#footer .center .sns li:hover:first-child {background-color:#4267b2;}
+#footer .center .sns li:hover:nth-child(2) {background-color:#1da1f2;}
+#footer .center .sns li:hover:nth-child(3) {background-color:#db4437;}
+#footer .center .sns li:hover:nth-child(4) {background-color:#0077b5;}
+#footer .center .sns li:hover:nth-child(5) {background-color:#c32aa3;}
+#footer .center .sns li:hover:nth-child(6) {background-color:#bd081c;}
+#footer .center .sns li a i {line-height:40px; color:#676767;}
+#footer .center p {margin-bottom:0;}
